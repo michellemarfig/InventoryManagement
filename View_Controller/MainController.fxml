@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.cell.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="mainAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="468.0" prefWidth="994.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View_Controller.Main">
+   <children>
+      <Button fx:id="mainExitBtn" layoutX="924.0" layoutY="429.0" mnemonicParsing="false" onAction="#exit" text="Exit" />
+      <AnchorPane layoutX="18.0" layoutY="82.0" prefHeight="335.0" prefWidth="468.0" style="-fx-border-width: 2; -fx-border-radius: 10; -fx-border-color: black;">
+         <children>
+            <Button fx:id="partDeleteBtn" layoutX="409.0" layoutY="303.0" mnemonicParsing="false" onAction="#partDelete" text="Delete" />
+            <Button fx:id="partModifyCol" layoutX="347.0" layoutY="303.0" mnemonicParsing="false" onAction="#goToModifyPart" text="Modify" />
+            <Button fx:id="partAddBtn" layoutX="301.0" layoutY="303.0" mnemonicParsing="false" onAction="#goToAddPart" text="Add" />
+            <TableView fx:id="partTable" layoutX="7.0" layoutY="40.0" prefHeight="256.0" prefWidth="453.0">
+              <columns>
+
+                <TableColumn fx:id="partIdCol" prefWidth="75.0" text="Part ID">
+                  <cellValueFactory> <PropertyValueFactory property="id" /> </cellValueFactory>
+              </TableColumn>
+
+                <TableColumn fx:id="partNameCol" prefWidth="98.0" text="Parts">
+                    <cellValueFactory> <PropertyValueFactory property="name" /> </cellValueFactory>
+                </TableColumn>
+
+                  <TableColumn fx:id="partStockCol" prefWidth="114.0" text="Inventory Level">
+                      <cellValueFactory> <PropertyValueFactory property="stock" /> </cellValueFactory>
+                  </TableColumn>
+
+                  <TableColumn fx:id="partPriceCol" prefWidth="140.0" text="Price / Cost per Unit">
+                      <cellValueFactory> <PropertyValueFactory property="price" /> </cellValueFactory>
+                  </TableColumn>
+
+              </columns>
+            </TableView>
+            <Label fx:id="partsTitle" layoutX="7.0" layoutY="14.0" text="Parts">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font></Label>
+            <TextField fx:id="mainPartSearchTxt" layoutX="259.0" layoutY="11.0" prefHeight="25.0" prefWidth="142.0" promptText="Search by ID or Name" />
+            <Button fx:id="mainPartSearchBtn" layoutX="408.0" layoutY="11.0" mnemonicParsing="false" onAction="#partSearch" text="Search" />
+         </children></AnchorPane>
+
+
+
+      <AnchorPane layoutX="497.0" layoutY="81.0" prefHeight="338.0" prefWidth="468.0" style="-fx-border-radius: 10; -fx-border-width: 2; -fx-border-color: black;">
+         <children>
+            <Button fx:id="productDeleteBtn" layoutX="410.0" layoutY="309.0" mnemonicParsing="false" onAction="#productDelete" text="Delete" />
+            <Button fx:id="productModifyCol" layoutX="346.0" layoutY="309.0" mnemonicParsing="false" onAction="#goToModifyProduct" text="Modify" />
+            <Button fx:id="productAddBtn" layoutX="298.0" layoutY="309.0" mnemonicParsing="false" onAction="#goToAddProduct" text="Add" />
+            <TableView fx:id="productTable" layoutX="8.0" layoutY="41.0" prefHeight="256.0" prefWidth="453.0">
+              <columns>
+
+                <TableColumn fx:id="productIdCol" prefWidth="92.0" text="Product ID">
+                    <cellValueFactory> <PropertyValueFactory property="id" /> </cellValueFactory>
+                </TableColumn>
+
+                  <TableColumn fx:id="productNameCol" prefWidth="107.0" text="Product Name">
+                      <cellValueFactory> <PropertyValueFactory property="name" /> </cellValueFactory>
+                  </TableColumn>
+
+                  <TableColumn fx:id="productStockCol" prefWidth="96.0" text="Inventory Level">
+                      <cellValueFactory> <PropertyValueFactory property="stock" /> </cellValueFactory>
+                  </TableColumn>
+
+                  <TableColumn fx:id="productPriceCol" minWidth="0.0" prefWidth="125.0" text="Price / Cost per Unit">
+                      <cellValueFactory> <PropertyValueFactory property="price" /> </cellValueFactory>
+                  </TableColumn>
+              </columns>
+            </TableView>
+            <Label fx:id="productsTitle" layoutX="8.0" layoutY="14.0" text="Products">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font></Label>
+            <TextField fx:id="mainProductSearchTxt" layoutX="258.0" layoutY="11.0" prefHeight="25.0" prefWidth="142.0" promptText="Search by ID or Name" />
+            <Button fx:id="mainProductSearchBtn" layoutX="409.0" layoutY="11.0" mnemonicParsing="false" onAction="#productSearch" text="Search" />
+         </children></AnchorPane>
+      <Label fx:id="mainTitle" layoutX="54.0" layoutY="46.0" text="Inventory Management System">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></Label>
+   </children>
+</AnchorPane>

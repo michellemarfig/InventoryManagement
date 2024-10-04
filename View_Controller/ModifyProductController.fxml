@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.cell.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="487.0" prefWidth="924.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View_Controller.ModifyProduct">
+    <children>
+        <Label layoutX="40.0" layoutY="44.0" text="Modify Product">
+            <font>
+                <Font name="System Bold" size="15.0" />
+            </font>
+        </Label>
+        <TextField fx:id="idText" layoutX="130.0" layoutY="93.0" />
+        <TextField fx:id="nameTxt" layoutX="131.0" layoutY="125.0" />
+        <TextField fx:id="stockTxt" layoutX="131.0" layoutY="159.0" prefHeight="25.0" prefWidth="69.0" />
+        <TextField fx:id="priceTxt" layoutX="131.0" layoutY="191.0" prefHeight="25.0" prefWidth="69.0" />
+        <TextField fx:id="maxTxt" layoutX="131.0" layoutY="223.0" prefHeight="25.0" prefWidth="69.0" />
+        <TextField fx:id="minTxt" layoutX="246.0" layoutY="223.0" prefHeight="25.0" prefWidth="69.0" />
+        <Label contentDisplay="RIGHT" layoutX="95.0" layoutY="97.0" text="ID" />
+        <Label contentDisplay="RIGHT" layoutX="77.0" layoutY="129.0" text="Name" />
+        <Label contentDisplay="RIGHT" layoutX="93.0" layoutY="163.0" text="Inv" />
+        <Label contentDisplay="RIGHT" layoutX="85.0" layoutY="195.0" text="Price" />
+        <Label contentDisplay="RIGHT" layoutX="90.0" layoutY="227.0" text="Max" />
+        <Label contentDisplay="RIGHT" layoutX="212.0" layoutY="227.0" text="Min" />
+        <TextField fx:id="searchTxt" layoutX="667.0" layoutY="42.0" />
+        <TableView fx:id="allPartsTable" layoutX="474.0" layoutY="72.0" prefHeight="146.0" prefWidth="409.0">
+            <columns>
+                <TableColumn prefWidth="58.0" text="Part ID">
+                    <cellValueFactory> <PropertyValueFactory property="id" /></cellValueFactory>
+                </TableColumn>
+                <TableColumn prefWidth="100.0" text="Part Name">
+                    <cellValueFactory> <PropertyValueFactory property="name" /></cellValueFactory>
+                </TableColumn>
+                <TableColumn prefWidth="102.0" text="Inventory Level">
+                    <cellValueFactory> <PropertyValueFactory property="stock" /></cellValueFactory>
+                </TableColumn>
+                <TableColumn minWidth="0.0" prefWidth="148.0" text="Price / Cost Per Unit">
+                    <cellValueFactory> <PropertyValueFactory property="price" /></cellValueFactory>
+                </TableColumn>
+            </columns>
+        </TableView>
+        <TableView fx:id="associatedTable" layoutX="474.0" layoutY="254.0" prefHeight="146.0" prefWidth="409.0">
+            <columns>
+                <TableColumn prefWidth="55.0" text="Part ID">
+                    <cellValueFactory> <PropertyValueFactory property="id" /></cellValueFactory>
+                </TableColumn>
+                <TableColumn prefWidth="107.0" text="Part Name">
+                    <cellValueFactory> <PropertyValueFactory property="name" /></cellValueFactory>
+                </TableColumn>
+                <TableColumn prefWidth="103.0" text="Inventory Level">
+                    <cellValueFactory> <PropertyValueFactory property="stock" /></cellValueFactory>
+                </TableColumn>
+                <TableColumn prefWidth="142.0" text="Price / Cost Per Unit">
+                    <cellValueFactory> <PropertyValueFactory property="price" /></cellValueFactory>
+                </TableColumn>
+            </columns>
+        </TableView>
+        <Button layoutX="845.0" layoutY="223.0" mnemonicParsing="false" onAction="#addAssociated" text="Add" />
+        <Button layoutX="734.0" layoutY="443.0" mnemonicParsing="false" onAction="#onSave" text="Save" />
+        <Button layoutX="831.0" layoutY="443.0" mnemonicParsing="false" onAction="#goToMain" text="Cancel" />
+        <Button layoutX="734.0" layoutY="408.0" mnemonicParsing="false" onAction="#removeAssociated" prefHeight="25.0" prefWidth="149.0" text="Remove Associated Part" />
+      <Button layoutX="831.0" layoutY="42.0" mnemonicParsing="false" onAction="#partSearch" text="Search" />
+    </children>
+</AnchorPane>
