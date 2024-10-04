@@ -1,6 +1,5 @@
 /**
  * @author Michelle Martinez-Figueroa
- * WGU - C482
  * January 7, 2021
  * Inventory - JavaFX Application
  */
